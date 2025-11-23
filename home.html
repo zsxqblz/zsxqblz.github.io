@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yifan (Frank) Zhang - Princeton University</title>
+    <style>
+        /* GLOBAL STYLES 
+           - Sets the white background and clean typography suitable for academic sites.
+        */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* LAYOUT CONTAINER 
+           - Centers content and limits width for readability (approx. 800px is standard for papers/blogs).
+        */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* HEADER SECTION 
+           - Name and basic affiliation info.
+        */
+        header {
+            margin-bottom: 50px;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+            color: #111;
+        }
+
+        .affiliation {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .links a {
+            color: #0066cc; /* Standard academic blue */
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 500;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTENT SECTIONS 
+           - distinct spacing between Bio, Interests, Education, etc.
+        */
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        /* TEXT STYLING 
+           - Ensures paragraphs are readable and lists are spaced correctly.
+        */
+        p {
+            margin-bottom: 15px;
+            text-align: justify; /* Optional: gives a more formal 'paper' look */
+        }
+
+        .interest-item {
+            margin-bottom: 15px;
+        }
+
+        .interest-title {
+            font-weight: 700;
+            color: #111;
+        }
+
+        /* FUN FACTS SPECIFIC 
+           - Monospace font for the otter faces to ensure alignment.
+        */
+        .otter-face {
+            font-family: "Courier New", Courier, monospace;
+            background: #f9f9f9;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        
+        /* PROFILE IMAGE PLACEHOLDER
+        */
+        .profile-section {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        /* Ensure the text column can shrink properly inside flex */
+        .bio-text {
+            flex: 1 1 60%;
+            min-width: 0; /* prevents overflow of long text inside flex */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* ensure content starts at the top */
+        }
+
+        /* Remove default top margin from paragraphs inside the bio so the
+           text top aligns with the profile image */
+        .bio-text p {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .profile-img {
+            /* On larger screens the image should take ~30% of the container */
+            flex: 0 0 40%;
+            width: 40%;
+            height: auto; /* preserve aspect ratio */
+            background-color: #f0f0f0; /* Placeholder grey */
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .profile-section {
+                flex-direction: column-reverse;
+                align-items: center; /* center image and text on small screens */
+                text-align: center;
+            }
+            /* On small screens use a clamped width so the image stays reasonable */
+            .profile-img {
+                flex: 0 0 auto;
+                width: clamp(80px, 40vw, 160px);
+                height: auto;
+            }
+            .bio-text {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Yifan (Frank) Zhang</h1>
+            <div class="affiliation">
+                Department of Electrical and Computer Engineering<br>
+                Princeton University
+            </div>
+            <div class="links">
+                <a href="mailto:yz4281@princeton.edu">Email</a>
+                <a href="https://scholar.google.com/citations?user=6_3TJs8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+                <a href="https://drive.google.com/file/d/11Ctk1c7ymso8DvaYtEE5vGpVHAlVeNnj/view?usp=sharing" target="_blank">CV</a>
+            </div>
+        </header>
+
+        <section class="profile-section">
+            <div class="bio-text">
+                <p>
+                    I am a theorist broadly interested in quantum information science and artificial intelligence. In recent years I have worked on problems in quantum computing and sensing, many-body physics, quantum complexity, and classical algorithms for simulating quantum systems. Along the way, I have developed intuitions that are not really “quantum,” and these ideas have led to unexpected insights into the behavior of modern AI systems.
+                </p>
+                <p>
+                    I was first doing my undergraduate at the Cooper Union (2018-2019) and then Cornell University (2019-2022), where I was mostly thinking about semiconductor devices and solid-state physics. Then I moved to Princeton ECE for my PhD (2022-current), where I turned to the dark side and started to work on theory.
+                </p>
+            </div>
+            <img src="photo.jpeg" alt="Yifan (Frank) Zhang" class="profile-img">
+        </section>
+
+        <section>
+            <h2>Research Interests</h2>
+            <p>I am currently thinking about the following themes:</p>
+            
+            <div class="interest-item">
+                <span class="interest-title">Towards fault tolerance:</span> 
+                Develop theory and practical methods that push us closer to fault-tolerant quantum computation. This includes decoders for quantum error-correcting codes and the structure of quantum “magic.”
+            </div>
+
+            <div class="interest-item">
+                <span class="interest-title">“Genuine” quantum behavior:</span> 
+                Identify when quantum phenomena—physical or computational—appear in ways that cannot be reproduced by classical systems. When they can be reproduced, understand the mechanisms that make classical simulation possible.
+            </div>
+
+            <div class="interest-item">
+                <span class="interest-title">Physics of AI:</span> 
+                Understand how physical notions such as locality, correlations, and phases emerge naturally from data, models, and training dynamics, and how to use these structures in modern generative AI.
+            </div>
+        </section>
+
+        <section>
+            <h2>Fun Facts</h2>
+            <p>
+                1. My favorite marine animal is the sea otter. Sometimes people confuse it with the river otter. In one-line, here is how you can tell them apart:
+                <br><br>
+                River otter: <span class="otter-face">( • ω • )</span> &nbsp;&nbsp; Sea otter: <span class="otter-face">(• ♠ •)</span>
+            </p>
+            <p>
+                2. There is another “Yifan Zhang” from Princeton ECE. This is NOT me; we have an unfortunate degeneracy. There is also one more Yifan Zhang from Princeton molecular biology. Let’s see how much degeneracy we can get... Identify me by looking for "Frank" or "Yifan F. Zhang".
+            </p>
+        </section>
+
+    </div>
+
+</body>
+</html>
